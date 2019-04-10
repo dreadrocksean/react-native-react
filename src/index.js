@@ -1,9 +1,5 @@
-import React, {Component} from 'react'
-
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-}
+export { default as Button } from "./Button";
+export { default as Text } from "./Text";
+export { default as View } from "./View";
+export { default as Image } from "./Image";
+export { default as TouchableOpacity } from "./TouchableOpacity";

@@ -1,0 +1,23 @@
+{
+  "name": "react-native-react",
+  "version": "1.0.0",
+  "description": "Allows React-Native components to be used in React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreadrocksean/react-native-react.git"
+  },
+  "keywords": [
+    "react",
+    "native"
+  ],
+  "author": "Adrian Bartholomew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dreadrocksean/react-native-react/issues"
+  },
+  "homepage": "https://github.com/dreadrocksean/react-native-react#readme"
+}
