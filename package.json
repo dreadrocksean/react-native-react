@@ -1,6 +1,6 @@
 {
   "name": "react-native-react",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "react-native-react React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -17,21 +17,34 @@
     "start": "nwb serve-react-demo",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "test:watch": "nwb test-react --server",
+    "semantic-release": "semantic-release"
   },
-  "dependencies": {},
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "react-jss": "^8.6.1",
+    "styled-components": "^4.2.0"
+  },
   "peerDependencies": {
-    "react": "16.x"
+    "react": "16.x",
+    "node-sass": "^4.11.0",
+    "react-jss": "^8.6.1",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "nwb": "0.23.x",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "semantic-release": "^15.13.3",
+    "travis-deploy-once": "^5.0.11"
   },
   "author": "",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dreadrocksean/react-native-react.git"
+  },
   "keywords": [
     "react-component"
   ]
