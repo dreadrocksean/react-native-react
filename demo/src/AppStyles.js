@@ -32,9 +32,9 @@ export default {
     margin: 20
   },
   shadow: {
-    shadowColor: "#fe839a",
-    shadowOffset: { width: 2, height: 2 },
-    shadowOpacity: 0.8,
+    // shadowColor: "#fe839a",
+    shadowOffset: { width: 0, height: 0 },
+    // shadowOpacity: 0.5,
     shadowRadius: 0,
     elevation: 4
   },

@@ -16,6 +16,10 @@ const webStyleMap = {
   elevation: { "box-shadow": 2 }
 };
 
+const defaultShorthand = {
+  "box-shadow": [0, 0, 0, 0, "#000"]
+};
+
 export const defaultStyles = `
   display: flex;
   flex-direction: column;
@@ -65,6 +69,7 @@ export const getWebStyles = mStyles => {
 const convertToWebShorthandStyle = (groups, wk) => {
   const group = groups[wk];
   const valArray = Object.keys(group).reduce((acc, mk) => {
+    acc = defaultShorthand[wk];
     if (group[mk].constructor === Object) {
       Object.keys(group[mk]).forEach(vk => {
         const val = group[mk][vk];
@@ -79,7 +84,7 @@ const convertToWebShorthandStyle = (groups, wk) => {
         switch (key) {
           case "opacity":
             {
-              const color = group[pos[key]];
+              const color = group[pos[key]] || acc[targetPos];
               const rgba =
                 color.charAt(0) === "#" ? hexToRGBA(color, group[mk]) : color;
               acc[targetPos] = rgba;

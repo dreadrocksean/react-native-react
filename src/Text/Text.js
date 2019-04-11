@@ -4,7 +4,7 @@ import css from "./styles";
 
 import * as utils from "../mobileUtils";
 
-const Text = props => {
+export default props => {
   let propsClone = Object.assign({}, props);
   delete propsClone.onPress;
   const wProps = utils.getWebProps(propsClone);
@@ -14,5 +14,3 @@ const Text = props => {
 
   return <WText {...wProps} children={wProps.transfunc(props.children)} />;
 };
-
-export default Text;

@@ -9,7 +9,9 @@ const Image = props => {
     ${css}${utils.getWebStyles(props.styles)};
   `;
 
-  return <WImage {...utils.getWebProps(props)} />;
+  let propsClone = Object.assign({}, props);
+  delete propsClone.onPress;
+  return <WImage {...utils.getWebProps(propsClone)} />;
 };
 
 export default Image;
