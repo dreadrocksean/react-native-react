@@ -24,7 +24,8 @@
   "dependencies": {
     "node-sass": "^4.11.0",
     "react-jss": "^8.6.1",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "Calendar": "git+https://gitlab+deploy-token-54004:zDpKnKtLzmVYx-tx6UTm@gitlab.com/dclaywel/calendar"
   },
   "peerDependencies": {
     "react": "16.x",
@@ -33,6 +34,7 @@
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
+    "@semantic-release/github": "^5.2.10",
     "nwb": "0.23.x",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

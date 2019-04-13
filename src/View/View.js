@@ -4,14 +4,42 @@ import css from "./styles";
 
 import * as utils from "../mobileUtils";
 
-const View = props => {
-  const WView = styled.div`
-    ${css} ${utils.getWebStyles(props.styles)};
-  `;
+export default class extends React.PureComponent {
+  state = {
+    show: true
+  };
 
-  let propsClone = Object.assign({}, props);
-  delete propsClone.onPress;
-  return <WView {...utils.getWebProps(propsClone)} />;
-};
+  componentDidMount() {
+    this.updatePredicate();
+    window.addEventListener("resize", this.updatePredicate);
+  }
 
-export default View;
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updatePredicate);
+  }
+
+  updatePredicate = () => {
+    this.setState({ show: this.isInViewport() });
+  };
+
+  isInViewport = () => {
+    return true;
+    if (!this.el) return false;
+    const top = this.el.getBoundingClientRect().top;
+    return top >= 0 && top <= window.innerHeight;
+  };
+
+  render() {
+    const { show } = this.state;
+    const WView = styled.div`
+      ${css} ${utils.getWebStyles(this.props.style)};
+    `;
+
+    let propsClone = Object.assign({}, this.props);
+    delete propsClone.onPress;
+    console.log("show: ", show);
+    return show ? (
+      <WView ref={el => (this.el = el)} {...utils.getWebProps(propsClone)} />
+    ) : null;
+  }
+}

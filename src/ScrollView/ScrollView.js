@@ -4,14 +4,14 @@ import css from "./styles";
 
 import * as utils from "../mobileUtils";
 
-const Image = props => {
-  const WImage = styled.img`
-    ${css}${utils.getWebStyles(props.style)};
+const ScrollView = props => {
+  const WScrollView = styled.div`
+    ${css} ${utils.getWebStyles(props.style)};
   `;
 
   let propsClone = Object.assign({}, props);
   delete propsClone.onPress;
-  return <WImage {...utils.getWebProps(propsClone)} />;
+  return <WScrollView {...utils.getWebProps(propsClone)} />;
 };
 
-export default Image;
+export default ScrollView;

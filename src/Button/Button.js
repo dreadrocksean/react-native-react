@@ -6,12 +6,12 @@ import * as utils from "../mobileUtils";
 
 const Button = props => {
   const WButton = styled.button`
-    ${css}${utils.getWebStyles(props.styles)};
+    ${css}${utils.getWebStyles(props.style)};
   `;
 
   let propsClone = Object.assign({}, props);
-  delete propsClone.onPress;
-  return <WButton {...utils.getWebProps(propsClone)} />;
+  delete propsClone.children;
+  return <WButton {...utils.getWebProps(propsClone)}>{props.title}</WButton>;
 };
 
 export default Button;
