@@ -1,6 +1,6 @@
 {
   "name": "react-native-react",
-  "version": "0.1.0-development",
+  "version": "0.2.0-development",
   "description": "react-native-react React component",
   "main": "lib/index.js",
   "module": "es/index.js",
