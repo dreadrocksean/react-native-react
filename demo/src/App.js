@@ -55,6 +55,9 @@ class App extends PureComponent {
               </Text>
             </View>
           </TouchableOpacity>
+          <View style={styles.shadowView}>
+            <Text style={styles.text}>A view with a box shadow</Text>
+          </View>
           <View style={styles.testView}>
             <Text>Mobile &lt;View&gt; test</Text>
             <Text onPress={this.testPress("Text")}>Im clickable Text</Text>

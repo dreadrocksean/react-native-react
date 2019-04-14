@@ -61,6 +61,17 @@ export default {
     padding: 5,
     backgroundColor: "#993333"
   },
+  shadowView: {
+    width: "50%",
+    margin: 20,
+    padding: 5,
+    backgroundColor: "#339933",
+    shadowColor: "#fff",
+    shadowOffset: { width: 3, height: 3 },
+    shadowOpacity: 0.5,
+    shadowRadius: 1,
+    elevation: 3
+  },
   testView: {
     width: "50%",
     minHeight: 100,

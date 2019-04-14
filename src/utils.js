@@ -4,7 +4,9 @@ export const hexToRGBA = (hex, opacity) => {
   const rbg = hex.split("").reduce((acc, v, i) => {
     if (mul === 1 || i % mul === 1) {
       const pos = mul === 1 ? i : i - 1;
-      acc[Math.floor(i / mul)] = parseInt(hex.substring(pos, pos + mul), 16);
+      const hexSub = hex.substring(pos, pos + mul);
+      const decVal = parseInt(hexSub, 16);
+      acc[Math.floor(i / mul)] = mul === 1 ? decVal * 17 : decVal;
     }
     return acc;
   }, []);

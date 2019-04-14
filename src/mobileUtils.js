@@ -83,7 +83,7 @@ export const getWebStyles = (mStyles, compType = "View") => {
 const convertToWebShorthandStyle = (groups, wk, compType) => {
   const group = groups[wk];
   const valArray = Object.keys(group).reduce((acc, mk) => {
-    acc = defaultShorthand[wk];
+    acc = acc || defaultShorthand[wk];
     if (group[mk].constructor === Object) {
       Object.keys(group[mk]).forEach(vk => {
         const val = group[mk][vk];
@@ -112,7 +112,7 @@ const convertToWebShorthandStyle = (groups, wk, compType) => {
       }
     }
     return acc;
-  }, []);
+  }, null);
   return {
     [wk]: Array.apply(null, valArray)
       .map(v => {
