@@ -21,19 +21,30 @@ class App extends PureComponent {
 
   render() {
     return (
-      <View style={styles.App}>
+      <ScrollView style={styles.App}>
         <View style={styles.AppHeader}>
-          <Image source={logo} style={styles.AppLogo} alt="logo" />
+          <Image
+            source={require("./testLogo.svg")}
+            style={styles.AppLogo}
+            alt="logo"
+          />
           <Text style={styles.headerText}>
             Testing all kinds of crap since 2019!
           </Text>
         </View>
         <View style={styles.AppBody}>
           <Button
-            onPress={this.testPress}
-            style={styles.button}
+            onPress={this.testPress("Button")}
             title="I&apos;m a Mobile &lt;Button /&gt;"
           />
+          <TouchableOpacity
+            onPress={this.testPress("Styled Button")}
+            style={styles.button}
+          >
+            <Text style={{ color: styles.button.color }}>
+              I'm a styled "button"
+            </Text>
+          </TouchableOpacity>
           <TouchableOpacity
             style={styles.centered}
             onPress={this.testPress("View")}
@@ -45,7 +56,9 @@ class App extends PureComponent {
             </View>
           </TouchableOpacity>
           <View style={styles.testView}>
-            <Text style={styles.shadow}>Mobile &lt;View&gt; test</Text>
+            <Text>Mobile &lt;View&gt; test</Text>
+            <Text onPress={this.testPress("Text")}>Im clickable Text</Text>
+            <Text style={styles.shadow}>Im Text with a text shadow</Text>
           </View>
         </View>
         <View style={styles.list}>
@@ -104,7 +117,7 @@ class App extends PureComponent {
             <Text>I am an item in the list</Text>
           </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

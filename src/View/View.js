@@ -23,10 +23,11 @@ export default class extends React.PureComponent {
   };
 
   isInViewport = () => {
-    return true;
+    // return true;
+    console.log("scrollable: ", this.props.scrollable);
     if (!this.el) return false;
     const top = this.el.getBoundingClientRect().top;
-    return top >= 0 && top <= window.innerHeight;
+    return this.props.scrollable || (top >= 0 && top <= window.innerHeight);
   };
 
   render() {
@@ -38,8 +39,16 @@ export default class extends React.PureComponent {
     let propsClone = Object.assign({}, this.props);
     delete propsClone.onPress;
     console.log("show: ", show);
+    console.log("children: ", this.props.children);
     return show ? (
-      <WView ref={el => (this.el = el)} {...utils.getWebProps(propsClone)} />
+      <WView ref={el => (this.el = el)} {...utils.getWebProps(propsClone)}>
+        {[...propsClone.children].map((v, i) => {
+          return React.cloneElement(v, {
+            key: i,
+            scrollable: this.props.scrollable
+          });
+        })}
+      </WView>
     ) : null;
   }
 }

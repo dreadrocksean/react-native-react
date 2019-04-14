@@ -11,11 +11,13 @@ export default {
   },
   AppLogo: {
     animation: "App-logo-spin infinite 20s linear",
+    width: 240,
     height: 240,
     marginVertical: 20
   },
   AppHeader: {
-    marginBottom: 20
+    marginBottom: 20,
+    alignItems: "center"
   },
   headerText: {
     fontSize: "calc(10px + 2vmin)",
@@ -38,17 +40,20 @@ export default {
   shadow: {
     shadowColor: "#000",
     // shadowColor: "#fe839a",
-    shadowOffset: { width: 1, height: 1 },
-    shadowOpacity: 1,
+    shadowOffset: { width: 3, height: 3 },
+    shadowOpacity: 0.3,
     shadowRadius: 1,
     elevation: 0
   },
   button: {
     backgroundColor: "transparent",
     borderRadius: 3,
-    border: "2px solid palevioletred",
+    borderWidth: 2,
+    borderStyle: "solid",
+    borderColor: "palevioletred",
     color: "palevioletred",
-    padding: "0.25em 1em"
+    paddingVertical: 4,
+    paddingHorizontal: 16
   },
   touchView: {
     width: "50%",
@@ -58,7 +63,7 @@ export default {
   },
   testView: {
     width: "50%",
-    height: 100,
+    minHeight: 100,
     margin: 20,
     padding: 20,
     backgroundColor: "grey",

@@ -11,7 +11,13 @@ const ScrollView = props => {
 
   let propsClone = Object.assign({}, props);
   delete propsClone.onPress;
-  return <WScrollView {...utils.getWebProps(propsClone)} />;
+  return (
+    <WScrollView {...utils.getWebProps(propsClone)}>
+      {[...propsClone.children].map((v, i) => {
+        return React.cloneElement(v, { key: i, scrollable: true });
+      })}
+    </WScrollView>
+  );
 };
 
 export default ScrollView;
