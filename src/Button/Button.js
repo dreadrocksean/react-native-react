@@ -21,7 +21,6 @@ const Button = props => {
     onClick: props.onPress,
     disabled: props.disabled
   };
-  // delete wPro.children;
   return <WButton {...wProps}>{props.title}</WButton>;
 };
 

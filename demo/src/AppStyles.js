@@ -39,7 +39,6 @@ export default {
   },
   shadow: {
     shadowColor: "#000",
-    // shadowColor: "#fe839a",
     shadowOffset: { width: 3, height: 3 },
     shadowOpacity: 0.3,
     shadowRadius: 1,

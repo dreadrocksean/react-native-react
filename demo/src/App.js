@@ -7,10 +7,11 @@ import {
   Button,
   Text,
   Image,
+  NativeSVG,
   TouchableOpacity,
   ScrollView
 } from "../../src/";
-import logo from "./testLogo.svg";
+import logo from "./logo.svg";
 import styles from "./AppStyles";
 
 class App extends PureComponent {
@@ -21,13 +22,9 @@ class App extends PureComponent {
 
   render() {
     return (
-      <ScrollView style={styles.App}>
+      <View style={styles.App}>
         <View style={styles.AppHeader}>
-          <Image
-            source={require("./testLogo.svg")}
-            style={styles.AppLogo}
-            alt="logo"
-          />
+          <NativeSVG source={logo} style={styles.AppLogo} alt="logo" />
           <Text style={styles.headerText}>
             Testing all kinds of crap since 2019!
           </Text>
@@ -64,7 +61,7 @@ class App extends PureComponent {
             <Text style={styles.shadow}>Im Text with a text shadow</Text>
           </View>
         </View>
-        <View style={styles.list}>
+        <ScrollView style={styles.list}>
           <View style={styles.listItem}>
             <Text>I am an item in the list</Text>
           </View>
@@ -119,8 +116,8 @@ class App extends PureComponent {
           <View style={styles.listItem}>
             <Text>I am an item in the list</Text>
           </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </View>
     );
   }
 }

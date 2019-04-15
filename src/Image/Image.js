@@ -4,7 +4,7 @@ import css from "./styles";
 
 import * as utils from "../mobileUtils";
 
-const Image = props => {
+export default props => {
   const WImage = styled.img`
     ${css}${utils.getWebStyles(props.style)};
   `;
@@ -13,5 +13,3 @@ const Image = props => {
   delete propsClone.onPress;
   return <WImage {...utils.getWebProps(propsClone)} />;
 };
-
-export default Image;
