@@ -15,6 +15,12 @@ export default {
     height: 240,
     marginVertical: 20
   },
+  AppImage: {
+    animation: "App-image-spin infinite 350s linear",
+    width: 500,
+    height: 500,
+    marginVertical: 0
+  },
   AppHeader: {
     marginBottom: 20,
     alignItems: "center"
@@ -102,6 +108,14 @@ export default {
     },
     to: {
       transform: "rotate(585deg)"
+    }
+  },
+  "@keyframes App-image-spin": {
+    from: {
+      transform: "rotate(0deg)"
+    },
+    to: {
+      transform: "rotate(-360deg)"
     }
   }
 };

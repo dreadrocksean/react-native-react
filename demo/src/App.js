@@ -12,19 +12,19 @@ import {
   ScrollView
 } from "../../src/";
 import logo from "./logo.svg";
+import image1 from "./image1.png";
 import styles from "./AppStyles";
 
 class App extends PureComponent {
   trans = val => val.toUpperCase();
   testPress = type => () => alert(`${type} was clicked!`);
 
-  comnponentDidMount() {}
-
   render() {
     return (
       <View style={styles.App}>
         <View style={styles.AppHeader}>
           <NativeSVG source={logo} style={styles.AppLogo} alt="logo" />
+          <Image source={image1} style={styles.AppImage} alt="logo" />
           <Text style={styles.headerText}>
             Testing all kinds of crap since 2019!
           </Text>
@@ -60,63 +60,63 @@ class App extends PureComponent {
             <Text onPress={this.testPress("Text")}>Im clickable Text</Text>
             <Text style={styles.shadow}>Im Text with a text shadow</Text>
           </View>
+          <ScrollView style={styles.list}>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+          </ScrollView>
         </View>
-        <ScrollView style={styles.list}>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-        </ScrollView>
       </View>
     );
   }
