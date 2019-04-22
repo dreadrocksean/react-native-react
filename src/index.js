@@ -5,3 +5,5 @@ export { default as Image } from "./Image";
 export { default as NativeSVG } from "./Image";
 export { default as TouchableOpacity } from "./TouchableOpacity";
 export { default as ScrollView } from "./ScrollView";
+export { default as TextInput } from "./TextInput";
+export { default as FormElement } from "./FormElement";

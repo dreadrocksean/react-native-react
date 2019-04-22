@@ -39,6 +39,34 @@ export default {
   AppLink: {
     color: "#61dafb"
   },
+  FormElement: {
+    fontSize: 16,
+    textAlign: "left",
+    borderWidth: 1,
+    borderType: "solid",
+    borderColor: "#efefef",
+    padding: 8,
+    width: "100%",
+    borderRadius: 10,
+    marginVertical: 10
+  },
+  TextInput: {
+    color: "#4d4d4d",
+    fontSize: 16,
+    height: 40,
+    minHeight: 40,
+    width: "80vw",
+    maxWidth: 300,
+    minWidth: 300,
+    borderColor: "gray",
+    borderWidth: 1,
+    padding: 10,
+    backgroundColor: "#d4d4d4",
+    marginVertical: 20
+  },
+  CheckBox: {
+    height: 40
+  },
   text: {
     color: "yellow",
     margin: 20

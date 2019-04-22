@@ -14,5 +14,7 @@ export default props => {
     ${css} ${noStyle} ${utils.getWebStyles(props.style, "Text")};
   `;
 
-  return <WText {...wProps} children={wProps.transfunc(props.children)} />;
+  const children =
+    (wProps.transfunc || (() => {}))(props.children) || props.children;
+  return <WText {...wProps} children={children} />;
 };

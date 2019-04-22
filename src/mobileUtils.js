@@ -42,7 +42,8 @@ export const getWebProps = props => {
     console.error("transfunc is undefined");
     delete propsClone.transfunc; // Can't delete from immutable "props"
   }
-  let mProps = { transfunc: arg => arg };
+  let mProps = {};
+  // let mProps = { transfunc: arg => arg };
   Object.keys(propsClone).map(
     prop => (mProps[webPropMap[prop] || prop] = propsClone[prop])
   );

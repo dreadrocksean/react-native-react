@@ -8,4 +8,4 @@ const root = document.querySelector("#demo");
 // body.style.overflow = "hidden";
 // root.style.overflow = "hidden";
 
-render(<App />, root);
+render(<App key={9898989} />, root);

@@ -1,23 +1,23 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
 import css from "./styles";
 
 import * as utils from "../mobileUtils";
 
-const ScrollView = props => {
-  const WScrollView = styled.div`
-    ${css} ${utils.getWebStyles(props.style)};
+export default class extends PureComponent {
+  ScrollView = styled.div`
+    ${css} ${utils.getWebStyles(this.props.style)};
   `;
+  propsClone = Object.assign({}, this.props);
 
-  let propsClone = Object.assign({}, props);
-  delete propsClone.onPress;
-  return (
-    <WScrollView {...utils.getWebProps(propsClone)}>
-      {[...propsClone.children].map((v, i) => {
-        return React.cloneElement(v, { key: i, scrollable: true });
-      })}
-    </WScrollView>
-  );
-};
-
-export default ScrollView;
+  render() {
+    delete this.propsClone.onPress;
+    return (
+      <this.ScrollView {...utils.getWebProps(this.propsClone)}>
+        {[...this.props.children].map((v, i) => {
+          return React.cloneElement(v, { key: i, scrollable: true });
+        })}
+      </this.ScrollView>
+    );
+  }
+}
