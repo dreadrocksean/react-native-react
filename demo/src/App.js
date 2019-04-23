@@ -58,7 +58,7 @@ class App extends PureComponent {
 
   render() {
     return (
-      <ScrollView style={styles.App}>
+      <View style={styles.App}>
         {/*<View style={styles.AppHeader}>
           <NativeSVG source={logo} style={styles.AppLogo} alt="logo" />
           <Image source={image1} style={styles.AppImage} alt="logo" />
@@ -187,7 +187,7 @@ class App extends PureComponent {
           </View>
         </View>
         {/*</View>*/}
-      </ScrollView>
+      </View>
     );
   }
 }

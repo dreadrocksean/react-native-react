@@ -3,7 +3,8 @@ const $white = "#fff";
 
 export default {
   App: {
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
+    // justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#282c34",
     minHeight: `calc(100vh - ${$padding * 2}px)`,
@@ -123,7 +124,8 @@ export default {
     padding: 20,
     borderColor: "#4d4d4d",
     borderWidth: 1,
-    borderStyle: "solid"
+    borderStyle: "solid",
+    maxHeight: 400
   },
   listItem: {
     margin: 20,
