@@ -59,13 +59,13 @@ export default class extends Component {
 
     // console.log("show: ", show);
     // console.log("children: ", this.props.children);
-    // return show ? (
     return (
       <this.View
         ref={el => (this.el = el)}
         {...utils.getWebProps(propsClone)}
         style={{
-          display: show ? "flex" : "none"
+          display: show ? "flex" : "none",
+          maxHeight: window.innerHeight - this.top
         }}
       >
         {[...propsClone.children].map((v, i) => {
@@ -76,6 +76,5 @@ export default class extends Component {
         })}
       </this.View>
     );
-    // ) : null;
   }
 }
