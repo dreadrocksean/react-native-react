@@ -13,17 +13,10 @@ export default class extends Component {
   componentDidMount() {
     this.updatePredicate();
     window.addEventListener("resize", this.updatePredicate);
+    if (!this.props.isChild && !this.props.scrollable) {
+      window.document.querySelector("body").style.overflow = "hidden";
+    }
   }
-
-  // componentDidUpdate(prevProps, prevState, snapshot) {
-  //   if (!snapshot.show) {
-  //     this.setState({ show: false });
-  //   }
-  // }
-
-  // getSnapshotBeforeUpdate(prevProps, prevState) {
-  //   return { show: this.isInViewport() };
-  // }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.updatePredicate);
@@ -65,13 +58,14 @@ export default class extends Component {
         {...utils.getWebProps(propsClone)}
         style={{
           display: show ? "flex" : "none",
-          maxHeight: window.innerHeight - this.top
+          maxHeight: show ? "inherit" : window.innerHeight - this.top
         }}
       >
         {[...propsClone.children].map((v, i) => {
           return React.cloneElement(v, {
             key: i,
-            scrollable: this.props.scrollable
+            scrollable: this.props.scrollable,
+            isChild: true
           });
         })}
       </this.View>

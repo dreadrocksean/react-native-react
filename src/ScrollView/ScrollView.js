@@ -15,7 +15,11 @@ export default class extends PureComponent {
     return (
       <this.ScrollView {...utils.getWebProps(this.propsClone)}>
         {[...this.props.children].map((v, i) => {
-          return React.cloneElement(v, { key: i, scrollable: true });
+          return React.cloneElement(v, {
+            key: i,
+            scrollable: true,
+            isChild: true
+          });
         })}
       </this.ScrollView>
     );

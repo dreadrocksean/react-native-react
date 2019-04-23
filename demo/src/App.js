@@ -59,134 +59,134 @@ class App extends PureComponent {
   render() {
     return (
       <View style={styles.App}>
-        {/*<View style={styles.AppHeader}>
+        <View style={styles.AppHeader}>
           <NativeSVG source={logo} style={styles.AppLogo} alt="logo" />
           <Image source={image1} style={styles.AppImage} alt="logo" />
           <Text style={styles.headerText}>
             Testing all kinds of crap since 2019!
           </Text>
-        </View>*/}
-        {/*<View key="theform" style={styles.AppBody}>*/}
-        <FormElement
-          type="checkbox"
-          onPress={this._onRadioChange}
-          value={this.state.radioValue}
-          label={this.state.radioValue ? "Off" : "On"}
-          style={styles.FormElement}
-        />
-        <FormElement
-          type="select"
-          onChange={this._onSelectValueChange}
-          selectedValue={this.state.selectedValue}
-          values={languages}
-          label="Language"
-          style={styles.FormElement}
-        />
-        <FormElement
-          type="text"
-          onChange={this._onTextChange}
-          value={this.state.textInputValue}
-          label={"Name"}
-          placeholder="Enter Name"
-          style={styles.TextInput}
-          labelStyles={{ color: "red" }}
-        />
-        <FormElement
-          type="textarea"
-          onChange={this._onTextAreaChange}
-          value={this.state.textAreaValue}
-          label={"Notes"}
-          placeholder="Enter Notes"
-          style={styles.FormElement}
-        />
-        <Button
-          onPress={this.testPress("Button")}
-          title="I&apos;m a Mobile &lt;Button /&gt;"
-          value={this.state.radioValue}
-        />
-        <TouchableOpacity
-          onPress={this.testPress("Styled Button")}
-          style={styles.button}
-        >
-          <Text style={{ color: styles.button.color }}>
-            I'm a styled "button"
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.centered}
-          onPress={this.testPress("View")}
-        >
-          <View style={styles.touchView}>
-            <Text style={styles.text}>
-              {"This is a touchable view".toUpperCase()}
+        </View>
+        <View key="theform" style={styles.AppBody}>
+          <FormElement
+            type="checkbox"
+            onPress={this._onRadioChange}
+            value={this.state.radioValue}
+            label={this.state.radioValue ? "Off" : "On"}
+            style={styles.FormElement}
+          />
+          <FormElement
+            type="select"
+            onChange={this._onSelectValueChange}
+            selectedValue={this.state.selectedValue}
+            values={languages}
+            label="Language"
+            style={styles.FormElement}
+          />
+          <FormElement
+            type="text"
+            onChange={this._onTextChange}
+            value={this.state.textInputValue}
+            label={"Name"}
+            placeholder="Enter Name"
+            style={styles.TextInput}
+            labelStyles={{ color: "red" }}
+          />
+          <FormElement
+            type="textarea"
+            onChange={this._onTextAreaChange}
+            value={this.state.textAreaValue}
+            label={"Notes"}
+            placeholder="Enter Notes"
+            style={styles.FormElement}
+          />
+          <Button
+            onPress={this.testPress("Button")}
+            title="I&apos;m a Mobile &lt;Button /&gt;"
+            value={this.state.radioValue}
+          />
+          <TouchableOpacity
+            onPress={this.testPress("Styled Button")}
+            style={styles.button}
+          >
+            <Text style={{ color: styles.button.color }}>
+              I'm a styled "button"
             </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.centered}
+            onPress={this.testPress("View")}
+          >
+            <View style={styles.touchView}>
+              <Text style={styles.text}>
+                {"This is a touchable view".toUpperCase()}
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <View style={styles.shadowView}>
+            <Text style={styles.text}>A view with a box shadow</Text>
           </View>
-        </TouchableOpacity>
-        <View style={styles.shadowView}>
-          <Text style={styles.text}>A view with a box shadow</Text>
+          <View style={styles.testView}>
+            <Text>Mobile &lt;View&gt; test</Text>
+            <Text onPress={this.testPress("Text")}>Im clickable Text</Text>
+            <Text style={styles.shadow}>Im Text with a text shadow</Text>
+          </View>
+          <View style={styles.list}>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+            <View style={styles.listItem}>
+              <Text>I am an item in the list</Text>
+            </View>
+          </View>
         </View>
-        <View style={styles.testView}>
-          <Text>Mobile &lt;View&gt; test</Text>
-          <Text onPress={this.testPress("Text")}>Im clickable Text</Text>
-          <Text style={styles.shadow}>Im Text with a text shadow</Text>
-        </View>
-        <View style={styles.list}>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-          <View style={styles.listItem}>
-            <Text>I am an item in the list</Text>
-          </View>
-        </View>
-        {/*</View>*/}
       </View>
     );
   }

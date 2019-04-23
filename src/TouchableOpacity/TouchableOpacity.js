@@ -9,7 +9,17 @@ const TouchableOpacity = props => {
     ${css}${utils.getWebStyles(props.style)};
   `;
 
-  return <Div {...utils.getWebProps(props)} />;
+  return (
+    <Div {...utils.getWebProps(props)}>
+      {[...props.children].map((v, i) => {
+        return React.cloneElement(v, {
+          key: i,
+          scrollable: props.scrollable,
+          isChild: props.isChild
+        });
+      })}
+    </Div>
+  );
 };
 
 export default TouchableOpacity;
