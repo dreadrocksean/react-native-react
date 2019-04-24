@@ -43,8 +43,10 @@ class App extends PureComponent {
 
   _onTextAreaChange = ev => this.setState({ textAreaValue: ev.target.value });
 
-  _onSelectValueChange = (itemValue, itemPosition) =>
-    this.setState({ selectedValue: itemValue });
+  _onSelectValueChange = e => {
+    console.log("selectedValue: ", e.target.value);
+    this.setState({ selectedValue: e.target.value });
+  };
 
   render() {
     return (
