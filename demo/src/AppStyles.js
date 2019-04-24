@@ -124,8 +124,8 @@ export default {
     padding: 20,
     borderColor: "#4d4d4d",
     borderWidth: 1,
-    borderStyle: "solid",
-    maxHeight: 400
+    borderStyle: "solid"
+    // maxHeight: 400
   },
   listItem: {
     margin: 20,

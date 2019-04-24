@@ -22,15 +22,6 @@ const languages = [
   { label: "JavaScript", value: "js" }
 ];
 
-const TestInput = styled.input`
-  font-size: 1em;
-  text-align: left;
-  border: 1px solid #efefef;
-  padding: 0.5em;
-  width: 100%;
-  border-radius: 10px;
-`;
-
 class App extends PureComponent {
   state = {
     checked: "first",
@@ -46,7 +37,6 @@ class App extends PureComponent {
   _onRadioChange = () => this.setState({ radioValue: !this.state.radioValue });
 
   _onTextChange = ev => {
-    ev.preventDefault();
     console.log("value: ", ev.target.value);
     this.setState({ textInputValue: ev.target.value });
   };
@@ -66,7 +56,7 @@ class App extends PureComponent {
             Testing all kinds of crap since 2019!
           </Text>
         </View>
-        <View key="theform" style={styles.AppBody}>
+        <View style={styles.AppBody}>
           <FormElement
             type="checkbox"
             onPress={this._onRadioChange}
@@ -130,9 +120,9 @@ class App extends PureComponent {
             <Text onPress={this.testPress("Text")}>Im clickable Text</Text>
             <Text style={styles.shadow}>Im Text with a text shadow</Text>
           </View>
-          <View style={styles.list}>
+          <ScrollView style={styles.list}>
             <View style={styles.listItem}>
-              <Text>I am an item in the list</Text>
+              <Text>I am FIRST in the list</Text>
             </View>
             <View style={styles.listItem}>
               <Text>I am an item in the list</Text>
@@ -183,9 +173,9 @@ class App extends PureComponent {
               <Text>I am an item in the list</Text>
             </View>
             <View style={styles.listItem}>
-              <Text>I am an item in the list</Text>
+              <Text>I am LAST in the list</Text>
             </View>
-          </View>
+          </ScrollView>
         </View>
       </View>
     );

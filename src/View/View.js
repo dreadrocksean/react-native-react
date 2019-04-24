@@ -28,8 +28,6 @@ export default class extends Component {
 
   isInViewport = () => {
     if (!this.el) return false;
-    // return true;
-    // console.log("scrollable: ", this.props.scrollable);
     this.top = this.el.getBoundingClientRect().top || this.top;
     return (
       this.props.scrollable || (this.top >= 0 && this.top <= window.innerHeight)
@@ -50,8 +48,6 @@ export default class extends Component {
       propsClone.children = [];
     }
 
-    // console.log("show: ", show);
-    // console.log("children: ", this.props.children);
     return (
       <this.View
         ref={el => (this.el = el)}
