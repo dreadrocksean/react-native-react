@@ -18,10 +18,27 @@ const styledFunc = (type, multiline) => {
       return styled[type];
   }
 };
-const renderStyledComponent = (props, styles) =>
-  styledFunc(props.type, props.multiline)`
+const renderStyledComponent = (props, styles) => {
+  return styledFunc(props.type, props.multiline)`
     ${styles}
   `;
+};
+
+const renderStyledSelect = (props, styles) => {
+  const Option = styledFunc("option")``;
+  const Select = styledFunc(props.type)`
+      ${styles}
+    `;
+  return (
+    <Select value={props.selectedValue} onChange={props.onChange}>
+      {props.values.map((v, i) => (
+        <Option value={v.value} key={i}>
+          {v.label}
+        </Option>
+      ))}
+    </Select>
+  );
+};
 
 export default class extends PureComponent {
   static defaultProps = {
@@ -34,6 +51,10 @@ export default class extends PureComponent {
   StyledComponent = renderStyledComponent(this.props, this.finalStyles);
 
   render() {
-    return <this.StyledComponent {...this.wProps} value={this.props.value} />;
+    return this.props.type === "select" ? (
+      renderStyledSelect(this.props, this.finalStyles)
+    ) : (
+      <this.StyledComponent {...this.wProps} value={this.props.value} />
+    );
   }
 }
