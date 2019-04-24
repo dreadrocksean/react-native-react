@@ -5,7 +5,7 @@ import css from "./styles";
 import * as utils from "../mobileUtils";
 
 export default class extends PureComponent {
-  state = { maxHeight: 0 };
+  state = { maxHeight: "inherit" };
   top = 0;
 
   ScrollView = styled.div`
@@ -14,6 +14,7 @@ export default class extends PureComponent {
   propsClone = Object.assign({}, this.props);
 
   componentDidMount() {
+    if (!this.props.isChild) return;
     this.updatePredicate();
     window.addEventListener("resize", this.updatePredicate);
   }
