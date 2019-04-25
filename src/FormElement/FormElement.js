@@ -39,7 +39,6 @@ const renderStyledSelect = (props, styles) => {
           </Option>
         ))}
       </Select>
-      <div style={props.labelStyles}>{props.selectedValue}</div>
     </div>
   );
 };
@@ -55,13 +54,18 @@ export default class extends PureComponent {
 
   render() {
     return (
-      <div style={this.props.layoutStyles}>
-        <div style={this.props.labelStyles}>{this.props.label}</div>
-        {this.props.type === "select" ? (
-          renderStyledSelect(this.props, this.finalStyles)
-        ) : (
-          <this.StyledComponent {...this.webProps} value={this.props.value} />
-        )}
+      <div>
+        <div style={this.props.layoutStyles}>
+          <div style={this.props.labelStyles}>{this.props.label}</div>
+          {this.props.type === "select" ? (
+            renderStyledSelect(this.props, this.finalStyles)
+          ) : (
+            <this.StyledComponent {...this.webProps} value={this.props.value} />
+          )}
+        </div>
+        <div style={this.props.labelStyles}>
+          {this.props.selectedValue || this.props.value}
+        </div>
       </div>
     );
   }

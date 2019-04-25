@@ -19,7 +19,12 @@ import styles from "./AppStyles";
 
 const languages = [
   { label: "Java", value: "java" },
-  { label: "JavaScript", value: "js" }
+  { label: "JavaScript", value: "js" },
+  { label: "CSharp", value: "c#" },
+  { label: "C++", value: "c++" },
+  { label: "Python", value: "py" },
+  { label: "NodeJS", value: "node" },
+  { label: "PHP", value: "php" }
 ];
 
 class App extends PureComponent {
@@ -31,25 +36,15 @@ class App extends PureComponent {
     selectedValue: ""
   };
 
-  trans = val => val.toUpperCase();
   testPress = type => () => alert(`${type} was clicked!`);
 
-  _onRadioChange = ev => {
-    console.log("radio: ", ev.target.value);
-    this.setState({ radioValue: !this.state.radioValue });
-  };
+  _onRadioChange = () => this.setState({ radioValue: !this.state.radioValue });
 
-  _onTextChange = ev => {
-    console.log("value: ", ev.target.value);
-    this.setState({ textInputValue: ev.target.value });
-  };
+  _onTextChange = ev => this.setState({ textInputValue: ev.target.value });
 
   _onTextAreaChange = ev => this.setState({ textAreaValue: ev.target.value });
 
-  _onSelectValueChange = e => {
-    console.log("selectedValue: ", e.target.value);
-    this.setState({ selectedValue: e.target.value });
-  };
+  _onSelectValueChange = e => this.setState({ selectedValue: e.target.value });
 
   render() {
     return (
