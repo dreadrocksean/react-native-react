@@ -51,6 +51,16 @@ export default {
     borderRadius: 10,
     marginVertical: 10
   },
+  checkbox: {
+    width: 20,
+    height: 20
+  },
+  formElementLayout: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  label: { color: "orange", fontSize: 18, marginRight: 10 },
   TextInput: {
     color: "#4d4d4d",
     fontSize: 16,

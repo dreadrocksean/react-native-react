@@ -34,7 +34,10 @@ class App extends PureComponent {
   trans = val => val.toUpperCase();
   testPress = type => () => alert(`${type} was clicked!`);
 
-  _onRadioChange = () => this.setState({ radioValue: !this.state.radioValue });
+  _onRadioChange = ev => {
+    console.log("radio: ", ev.target.value);
+    this.setState({ radioValue: !this.state.radioValue });
+  };
 
   _onTextChange = ev => {
     console.log("value: ", ev.target.value);
@@ -50,7 +53,7 @@ class App extends PureComponent {
 
   render() {
     return (
-      <View style={styles.App}>
+      <ScrollView style={styles.App}>
         <View style={styles.AppHeader}>
           <NativeSVG source={logo} style={styles.AppLogo} alt="logo" />
           <Image source={image1} style={styles.AppImage} alt="logo" />
@@ -64,7 +67,9 @@ class App extends PureComponent {
             onPress={this._onRadioChange}
             value={this.state.radioValue}
             label={this.state.radioValue ? "Off" : "On"}
-            style={styles.FormElement}
+            style={styles.checkbox}
+            labelStyles={styles.label}
+            layoutStyles={styles.formElementLayout}
           />
           <FormElement
             type="select"
@@ -73,6 +78,8 @@ class App extends PureComponent {
             values={languages}
             label="Language"
             style={styles.FormElement}
+            labelStyles={styles.label}
+            layoutStyles={styles.formElementLayout}
           />
           <FormElement
             type="text"
@@ -82,6 +89,7 @@ class App extends PureComponent {
             placeholder="Enter Name"
             style={styles.TextInput}
             labelStyles={{ color: "red" }}
+            layoutStyles={styles.formElementLayout}
           />
           <FormElement
             type="textarea"
@@ -90,6 +98,8 @@ class App extends PureComponent {
             label={"Notes"}
             placeholder="Enter Notes"
             style={styles.FormElement}
+            labelStyles={styles.label}
+            layoutStyles={styles.formElementLayout}
           />
           <Button
             onPress={this.testPress("Button")}
@@ -179,7 +189,7 @@ class App extends PureComponent {
             </View>
           </ScrollView>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

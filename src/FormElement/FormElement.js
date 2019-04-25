@@ -3,6 +3,7 @@ import styled from "styled-components";
 import css from "./styles";
 
 import { TextInput, RadioButton } from "../index";
+import { Text } from "../";
 import * as utils from "../mobileUtils";
 
 const styledFunc = (type, multiline) => {
@@ -30,13 +31,16 @@ const renderStyledSelect = (props, styles) => {
       ${styles}
     `;
   return (
-    <Select value={props.selectedValue} onChange={props.onChange}>
-      {props.values.map((v, i) => (
-        <Option value={v.value} key={i}>
-          {v.label}
-        </Option>
-      ))}
-    </Select>
+    <div style={props.layoutStyles}>
+      <Select value={props.selectedValue} onChange={props.onChange}>
+        {props.values.map((v, i) => (
+          <Option value={v.value} key={i}>
+            {v.label}
+          </Option>
+        ))}
+      </Select>
+      <div style={props.labelStyles}>{props.selectedValue}</div>
+    </div>
   );
 };
 
@@ -46,15 +50,19 @@ export default class extends PureComponent {
   };
 
   webProps = utils.getWebProps(this.props);
-  wProps = { ...this.defaultProps, ...this.webProps };
-  finalStyles = { ...css, ...utils.getWebStyles(this.props.style) };
+  finalStyles = { ...utils.getWebStyles(this.props.style) };
   StyledComponent = renderStyledComponent(this.props, this.finalStyles);
 
   render() {
-    return this.props.type === "select" ? (
-      renderStyledSelect(this.props, this.finalStyles)
-    ) : (
-      <this.StyledComponent {...this.wProps} value={this.props.value} />
+    return (
+      <div style={this.props.layoutStyles}>
+        <div style={this.props.labelStyles}>{this.props.label}</div>
+        {this.props.type === "select" ? (
+          renderStyledSelect(this.props, this.finalStyles)
+        ) : (
+          <this.StyledComponent {...this.webProps} value={this.props.value} />
+        )}
+      </div>
     );
   }
 }
