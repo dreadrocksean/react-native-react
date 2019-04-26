@@ -53,7 +53,8 @@ export default {
   },
   checkbox: {
     width: 20,
-    height: 20
+    height: 20,
+    zoom: 1.5
   },
   formElementLayout: {
     display: "flex",
