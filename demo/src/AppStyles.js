@@ -61,21 +61,22 @@ export default {
     flexDirection: "row",
     alignItems: "center"
   },
-  label: { color: "orange", fontSize: 18, marginRight: 10 },
+  TextInputLabel: { color: "orange", fontSize: 18, marginRight: 10 },
   TextInput: {
-    color: "#4d4d4d",
-    fontSize: 16,
-    height: 40,
-    minHeight: 40,
-    width: "80vw",
+    color: "#fff",
+    fontSize: 36,
+    // height: 40,
+    // minHeight: 40,
     maxWidth: 300,
     minWidth: 300,
-    borderColor: "gray",
-    borderWidth: 1,
+    borderColor: "red",
+    borderWidth: 2,
+    // borderRadius: 16,
     padding: 10,
-    backgroundColor: "#d4d4d4",
-    marginVertical: 20
+    backgroundColor: "green"
+    // marginVertical: 20 // BAD: curently moves input sep from parent
   },
+  label: { color: "red", marginRight: 10 },
   CheckBox: {
     height: 40
   },

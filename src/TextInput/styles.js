@@ -1,13 +1,10 @@
-import { defaultStyles } from "../mobileUtils";
-
-export default `
-  ${defaultStyles}
-  margin: 0;
-  padding: 0;
-  color: #000;
-  font-size: 16px;
-  border: none;
-  box-shadow: none;
-  text-shadow: none;
-  border: none;
-`;
+export default {
+  margin: 0,
+  padding: 0,
+  // color: "yellow",
+  fontSize: 16,
+  border: "none",
+  boxShadow: "none",
+  textShadow: "none",
+  border: "none"
+};

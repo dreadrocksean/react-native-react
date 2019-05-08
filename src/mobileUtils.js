@@ -9,11 +9,14 @@ const webStyleMap = compType => {
   const colorPos = compType === "Text" ? 3 : 4;
   const radiusPos = compType === "Text" ? 2 : 3;
   let map = {
-    borderLeft: "border-left",
-    paddingHorizontal: ["padding-left", "padding-right"],
-    paddingVertical: ["padding-top", "padding-bottom"],
-    marginHorizontal: ["margin-left", "margin-right"],
-    marginVertical: ["margin-top", "margin-bottom"],
+    paddingHorizontal: ["paddingLeft", "paddingRight"],
+    paddingVertical: ["paddingTop", "paddingBottom"],
+    marginHorizontal: ["marginLeft", "marginRight"],
+    marginVertical: ["marginTop", "marginBottom"],
+    // paddingHorizontal: ["padding-left", "padding-right"],
+    // paddingVertical: ["padding-top", "padding-bottom"],
+    // marginHorizontal: ["margin-left", "margin-right"],
+    // marginVertical: ["margin-top", "margin-bottom"],
     shadowOffset: { [shadow]: { width: 0, height: 1 } },
     elevation: { [shadow]: 2 },
     shadowRadius: { [shadow]: radiusPos },

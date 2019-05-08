@@ -1,9 +1,12 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
+import { MenuItem } from "@material-ui/core";
+
 import css from "./styles";
 
-import { TextInput, RadioButton } from "../index";
-import { Text } from "../";
+import { RadioButton } from "../";
+import CustomTextInput from "./TextInput";
+import TextInput from "../TextInput";
 import * as utils from "../mobileUtils";
 
 const styledFunc = (type, multiline) => {
@@ -19,6 +22,7 @@ const styledFunc = (type, multiline) => {
       return styled[type];
   }
 };
+
 const renderStyledComponent = (props, styles) => {
   return styledFunc(props.type, props.multiline)`
     ${styles}
@@ -43,30 +47,49 @@ const renderStyledSelect = (props, styles) => {
   );
 };
 
-export default class extends PureComponent {
+class FormElement extends PureComponent {
   static defaultProps = {
     editable: "true"
   };
 
-  webProps = utils.getWebProps(this.props);
-  finalStyles = { ...utils.getWebStyles(this.props.style) };
-  StyledComponent = renderStyledComponent(this.props, this.finalStyles);
-
   render() {
+    let comp;
+    const webProps = utils.getWebProps(this.props);
+    const propStyles = { ...utils.getWebStyles(this.props.style) };
+    const StyledComponent = renderStyledComponent(this.props, propStyles);
+
+    const {
+      layoutStyles,
+      labelStyles,
+      scrollable,
+      isChild,
+      ...restProps
+    } = this.props;
+    const { label, value, selectedValue } = restProps;
+    switch (this.props.type) {
+      case "select":
+        {
+          comp = renderStyledSelect(restProps, propStyles);
+        }
+        break;
+      case "text":
+        {
+          comp = <CustomTextInput {...restProps} />;
+        }
+        break;
+      default:
+        comp = <StyledComponent {...webProps} value={this.props.value} />;
+    }
     return (
       <div>
-        <div style={this.props.layoutStyles}>
-          <div style={this.props.labelStyles}>{this.props.label}</div>
-          {this.props.type === "select" ? (
-            renderStyledSelect(this.props, this.finalStyles)
-          ) : (
-            <this.StyledComponent {...this.webProps} value={this.props.value} />
-          )}
+        <div style={layoutStyles}>
+          <div style={labelStyles}>{label}</div>
+          {comp}
         </div>
-        <div style={this.props.labelStyles}>
-          {this.props.selectedValue || this.props.value}
-        </div>
+        <div style={labelStyles}>{selectedValue || value}</div>
       </div>
     );
   }
 }
+
+export default FormElement;

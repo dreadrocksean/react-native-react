@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from "react";
-import withStyles from "react-jss";
+// import withStyles from "react-jss";
 import styled from "styled-components";
+import { withStyles } from "@material-ui/core/styles";
 // import Calendar from "calendar";
 
 import {
@@ -13,6 +14,7 @@ import {
   ScrollView,
   FormElement
 } from "../../src/";
+
 import logo from "./logo.svg";
 import image1 from "./image1.png";
 import styles from "./AppStyles";
@@ -26,6 +28,23 @@ const languages = [
   { label: "NodeJS", value: "node" },
   { label: "PHP", value: "php" }
 ];
+
+const testStyles = () => ({
+  TextInput: {
+    maxWidth: 200,
+    minWidth: 200,
+    color: "white",
+    backgroundColor: "grey",
+    fontSize: 36,
+    borderWidth: 3,
+    borderColor: "yellow",
+    borderStyle: "normal"
+  },
+
+  TextInputLabel: {
+    color: "yellow"
+  }
+});
 
 class App extends PureComponent {
   state = {
@@ -47,6 +66,7 @@ class App extends PureComponent {
   _onSelectValueChange = e => this.setState({ selectedValue: e.target.value });
 
   render() {
+    console.log("textInputValue: ", this.state.textInputValue);
     return (
       <ScrollView style={styles.App}>
         <View style={styles.AppHeader}>
@@ -78,12 +98,16 @@ class App extends PureComponent {
           />
           <FormElement
             type="text"
+            boxType="standard"
             onChange={this._onTextChange}
             value={this.state.textInputValue}
             label={"Name"}
             placeholder="Enter Name"
-            style={styles.TextInput}
-            labelStyles={{ color: "red" }}
+            styles={{
+              TextInputField: styles.TextInput,
+              TextInputLabel: styles.TextInputLabel
+            }}
+            labelStyles={styles.label}
             layoutStyles={styles.formElementLayout}
           />
           <FormElement
@@ -189,4 +213,4 @@ class App extends PureComponent {
   }
 }
 
-export default withStyles(styles)(App);
+export default App;

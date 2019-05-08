@@ -1,0 +1,60 @@
+@import './_default_settings';
+
+/* HTML templates for JS list painting. */
+.js-template {
+    display: none !important;
+}
+
+/* Last item in a container visually, but not in the markup */
+.u-visuallyLast {
+    margin-bottom: 0;
+}
+
+/* Used by WebFramework during field validations / AJAX alerts */
+.alertSizeCalc {
+    display: none;
+}
+
+/* Disable scrolling (such as when a modal is open). */
+.js-locked {
+    overflow: hidden;
+}
+
+/* "no results" placeholder */
+.js-noResults {
+    margin-bottom: 0;
+}
+
+/* Loading placeholders */
+.js-loadingPlaceholder {
+    filter: blur(0.25em);
+    line-height: 1em;
+    vertical-align: middle;
+
+    &::before {
+        content: '********';
+    }
+}
+
+.js-loadingContent {
+    display: none;
+
+    &.js-loaded {
+        display: block;
+    }
+}
+
+/* Feature Flags */
+a.development {
+    border-left: 0.25em solid $warningOrange;
+}
+
+.developmentFeature {
+    background-color: $alertYellow;
+}
+
+.environmentWarning {
+    background-color: $alertYellow;
+    padding: 0.25em;
+    text-align: center;
+}

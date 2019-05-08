@@ -1,0 +1,114 @@
+@import './_default_settings';
+
+/* Apply a natural box layout model to all elements, but allow components to change */
+html,
+body {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Reset base margins/padding */
+body,
+blockquote,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ol,
+p,
+pre,
+td,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    background-color: $gray12;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Global print styles */
+@media print {
+    * {
+        backgroundColor: transparent !important;
+        color: $black !important;
+
+        /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: ' (' attr(href) ')';
+    }
+
+    abbr[title]::after {
+        content: ' (' attr(title) ')';
+    }
+
+    .ir a::after,
+    a[href^='javascript:']::after,
+    a[href^='#']::after {
+        content: '';
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid $gray1;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        /* h5bp.com/t */
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

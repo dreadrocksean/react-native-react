@@ -29,3 +29,35 @@ export const flattenObject = (obj, level = 0) => {
     })(obj, 0)
   );
 };
+
+const isClassComponent = component => {
+  return typeof component === "function" &&
+    !!component.prototype.isReactComponent
+    ? true
+    : false;
+};
+
+const isFunctionComponent = component => {
+  return typeof component === "function" &&
+    String(component).includes("return React.createElement")
+    ? true
+    : false;
+};
+
+const isReactComponent = component => {
+  return isClassComponent(component) || isFunctionComponent(component)
+    ? true
+    : false;
+};
+
+const isElement = element => {
+  return React.isValidElement(element);
+};
+
+const isDOMTypeElement = element => {
+  return isElement(element) && typeof element.type === "string";
+};
+
+const isCompositeTypeElement = element => {
+  return isElement(element) && typeof element.type === "function";
+};
